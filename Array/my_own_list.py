@@ -43,7 +43,7 @@ class myList:
         if 0<= index < self.n:
             return self.myArray[index]
         else:
-            return 'indexError - index not in range' 
+            raise IndexError('index not in range')
         
     def pop(self):
         if self.n == 0:
@@ -83,6 +83,17 @@ class myList:
             self.__delitem__(pos)
         else:
             return pos
+        
+    def merge(self, anotherList):
+        for i in anotherList:
+            self.append(i)
+    
+    # def sort(self):
+    #     min = 0
+    #     for i in range(self.n):
+    #         if min> i
+
+
 
 test = myList()
 # print(type(test))
@@ -113,6 +124,14 @@ test.append('hii')
 # del test[0]
 # print(test)
 
+test2 = myList()
+test2.append(1)
+test2.append(2)
+test2.append(3)
+test2.append(4)
+
+test.merge(test2)
+
 print(test)
-test.remove(1)
-print(test)
+# test.remove(1)
+# print(test)
